@@ -1,0 +1,15 @@
+{
+  "name": "arsenal-calendar",
+  "version": "1.0.0",
+  "description": "This is a digital calendar featuring Arsenal FC's fixtures and results. Data will be scraped from https://www.livescore.com/en/football/team/arsenal/2773/results/.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^22.2.0"
+  }
+}
