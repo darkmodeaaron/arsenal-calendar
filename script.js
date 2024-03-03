@@ -29,6 +29,11 @@ const main = async () => {
             const result = e.querySelector('.EowVS div')
             const comp = columns[3].querySelector('a')
 
+            const score = columns[2].querySelector('a div')
+
+            const homescore = score.querySelector('.fYFHut')
+            const awayscore = score.querySelector('.fgIdgl')
+
             arr.push(date.innerText)
             arr.push(opponent.innerText)
             arr.push(where.innerText)
@@ -42,9 +47,19 @@ const main = async () => {
                 arr.push(comp.innerText)
             }
 
+            if (homescore && homescore.innerText) {
+                arr.push(homescore.innerText)
+            }
+
+            if (awayscore && awayscore.innerText) {
+                arr.push(awayscore.innerText)
+            }
+
             return arr
 
         })
+
+        const fixtures = document.querySelectorAll('.crJNBa')
 
     })
 

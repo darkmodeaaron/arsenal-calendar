@@ -28,7 +28,7 @@ header {
 .table-container {
     padding: 25px 0;
     display: flex;
-    gap: 15px;
+    gap: 5px;
 }
 
 .dayDate {
@@ -40,7 +40,7 @@ header {
 }
 
 .row {
-    width: 170px;
+    width: 160px;
     height: 35px;
     border: 1px solid #616161;
     border-bottom: 0px;
@@ -86,4 +86,11 @@ header {
 .date {
     font-size: 10px;
     font-weight: 300;
+}
+
+.month-head {
+    color: white;
+    font-weight: 400;
+    font-size: 17.5px;
+    margin-bottom: 10px;
 }

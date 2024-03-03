@@ -14,6 +14,11 @@ function Table(month, days, dayStart) {
         tableColumn.classList.add('column')
         tableSelector.appendChild(tableColumn)
 
+        const head = document.createElement('h1')
+        head.classList.add('month-head')
+        tableColumn.appendChild(head)
+        head.innerText = month
+
         for (i = 0; i < days; i++) {
 
             const tableRow = document.createElement('div')
@@ -73,7 +78,7 @@ function Table(month, days, dayStart) {
                         const fix = document.createElement('h3')
                         fix.classList.add('fix')
                         tableRow.appendChild(fix)
-                        fix.innerText = i[1] + ' ' + i[2]
+                        fix.innerText = i[1] + ' ' + i[2] + ' ' + i[5] + ' - ' + i[6]
 
                         const comp = document.createElement('h3')
                         comp.classList.add('comp')
@@ -121,8 +126,20 @@ september.createMonth()
 const october = new Table('Oct', 31, 6)
 october.createMonth()
 
-const november = new Table('Oct', 31, 6)
-october.createMonth()
+const november = new Table('Nov', 30, 2)
+november.createMonth()
+
+const december = new Table('Dec', 31, 4)
+december.createMonth()
+
+const january = new Table('Jan', 30, 0)
+january.createMonth()
+
+const febuary = new Table('Feb', 31, 2)
+febuary.createMonth()
+
+
+
 
 
 
