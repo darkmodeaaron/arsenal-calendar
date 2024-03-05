@@ -49,10 +49,7 @@ function Table(month, days, dayStart) {
             dateCounter += 1
             numCounter += 1
 
-            console.log(tog)
-
             const data = rowDay.innerText + ' ' + rowDate.innerText
-            console.log(data)
 
             if (dayStart == 7) {
                 dayStart = 0
@@ -80,6 +77,10 @@ function Table(month, days, dayStart) {
                         tableRow.appendChild(fix)
                         fix.innerText = i[1] + ' ' + i[2] + ' ' + i[5] + ' - ' + i[6]
 
+                        if (i[1] == 'Chelsea') {
+                            fix.innerText = i[1] + ' ' + i[2]
+                        }
+
                         const comp = document.createElement('h3')
                         comp.classList.add('comp')
                         topInfo.appendChild(comp)
@@ -95,6 +96,9 @@ function Table(month, days, dayStart) {
                                 break;
                             case 'D':
                                 fix.style.color = '#C37704'
+                                break;
+                            default: 
+                                fix.style.color = 'white'
                         }
 
                     }
@@ -105,17 +109,31 @@ function Table(month, days, dayStart) {
             }).catch(function (err) {
                 console.error('wrong')
             })
+
+            fetch('fixtures.json').then(function (response) {
+                return response.json();
+            }).then(function (obj) {
+                for (i of obj) {
+
+                    const check =i[0].slice(0, 6)
+
+                    if (check == tog) {
+                        
+                        const fix = document.createElement('h3')
+                        fix.classList.add('fix')
+                        tableRow.appendChild(fix)
+                        fix.innerText = i[1] + ' ' + i[2]
+                        
+
+                    }
+
+                }
+            })
             
         }
         
     }
 }
-
-
-
-
-
-
 
 const august = new Table('Aug', 31, 1)
 august.createMonth()
@@ -138,10 +156,12 @@ january.createMonth()
 const febuary = new Table('Feb', 31, 2)
 febuary.createMonth()
 
+const march = new Table('Mar', 31 , 4)
+march.createMonth()
 
+const april = new Table('Apr', 30 , 0)
+april.createMonth()
 
-
-
-
-
+const may = new Table('May', 30 , 0)
+may.createMonth()
 

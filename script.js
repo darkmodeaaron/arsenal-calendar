@@ -59,8 +59,6 @@ const main = async () => {
 
         })
 
-        const fixtures = document.querySelectorAll('.crJNBa')
-
     })
 
     console.log(table)
@@ -73,4 +71,46 @@ const main = async () => {
 }
 
 
+const second = async () => {
+
+    const browser = await puppeteer.launch()
+    const page = await browser.newPage()
+    await page.goto(url)
+
+    const fixtures = await page.evaluate(() => {
+
+        const tableBodys = document.querySelectorAll('tbody')
+
+        const fixturesBody = tableBodys[5].querySelectorAll('tr')
+
+        return Array.from(fixturesBody).map((e) => {
+
+            const arr2 = []
+
+            const tds = e.querySelectorAll('td')
+
+            const date = tds[0].querySelector('td div div span')
+            const opponent = tds[1].querySelector('div a .bmFemA div')
+            const where = tds[1].querySelector('div .fYFHut')
+            
+            arr2.push(date.innerText)
+            arr2.push(opponent.innerText)
+            arr2.push(where.innerText)
+
+            return arr2
+
+        })
+
+    })
+
+    console.log(fixtures)
+
+    fs.writeFile('fixtures.json', JSON.stringify(fixtures), (err) => {
+        if (err) throw err;
+        console.log('file saved')
+    })
+    
+}
+
 main()
+second()
