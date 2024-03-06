@@ -11,37 +11,37 @@ function Table(month, days, dayStart) {
     this.createMonth = function() {
 
         const tableColumn = document.createElement('div')
-        tableColumn.classList.add('column')
+        tableColumn.classList.add('table-column')
         tableSelector.appendChild(tableColumn)
 
         const head = document.createElement('h1')
-        head.classList.add('month-head')
+        head.classList.add('column-header')
         tableColumn.appendChild(head)
         head.innerText = month
 
         for (i = 0; i < days; i++) {
 
             const tableRow = document.createElement('div')
-            tableRow.classList.add('row')
+            tableRow.classList.add('table-row')
             tableColumn.appendChild(tableRow)
 
             const topInfo = document.createElement('div')
-            topInfo.classList.add('top-info')
+            topInfo.classList.add('row-flex')
             tableRow.appendChild(topInfo)
 
             const rowDayDate = document.createElement('div')
-            rowDayDate.classList.add('dayDate')
+            rowDayDate.classList.add('row-dayDate')
             topInfo.appendChild(rowDayDate)
 
             const rowDay = document.createElement('h3')
-            rowDay.classList.add('day')
+            rowDay.classList.add('row-day')
             rowDayDate.appendChild(rowDay)
             rowDay.innerText = daysArr[dayStart]
 
             const tog = month + ' ' + numsArr[numCounter]
             
             const rowDate = document.createElement('h3')
-            rowDate.classList.add('date')
+            rowDate.classList.add('row-date')
             rowDayDate.appendChild(rowDate)
             rowDate.innerText = datesArr[dateCounter]
 
@@ -73,7 +73,7 @@ function Table(month, days, dayStart) {
                     if (check == tog) {
 
                         const fix = document.createElement('h3')
-                        fix.classList.add('fix')
+                        fix.classList.add('row-fixResult')
                         tableRow.appendChild(fix)
                         fix.innerText = i[1] + ' ' + i[2] + ' ' + i[5] + ' - ' + i[6]
 
@@ -82,7 +82,7 @@ function Table(month, days, dayStart) {
                         }
 
                         const comp = document.createElement('h3')
-                        comp.classList.add('comp')
+                        comp.classList.add('row-comp')
                         topInfo.appendChild(comp)
                         comp.innerText = i[4]
 
@@ -120,7 +120,7 @@ function Table(month, days, dayStart) {
                     if (check == tog) {
                         
                         const fix = document.createElement('h3')
-                        fix.classList.add('fix')
+                        fix.classList.add('row-fixResult')
                         tableRow.appendChild(fix)
                         fix.innerText = i[1] + ' ' + i[2]
                         

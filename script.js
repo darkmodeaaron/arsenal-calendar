@@ -8,7 +8,7 @@ const main = async () => {
     const page = await browser.newPage()
     await page.goto(url)
 
-    const table = await page.evaluate(() => {
+    const results = await page.evaluate(() => {
 
         // Use querySelectorAll instead of querySelector if you want to select multiple elements
         const tableBody = document.querySelector('.table-body')
@@ -61,9 +61,9 @@ const main = async () => {
 
     })
 
-    console.log(table)
+    console.log(results)
 
-    fs.writeFile('table.json', JSON.stringify(table), (err) => {
+    fs.writeFile('table.json', JSON.stringify(results), (err) => {
         if (err) throw err;
         console.log('file saved')
     })

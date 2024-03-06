@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #111111;
     padding: 25px;
+    background-color: #111111;
 }
 
 header {
@@ -26,21 +26,17 @@ header {
 }
 
 .table-container {
-    padding: 25px 0;
     display: flex;
     gap: 5px;
+    padding: 25px 0;
 }
 
-.dayDate {
-    display: flex;
-    color: #616161;
-    font-size: 10px;
-    align-items: center;
-    gap: 4px;
+.table-column {
+    width: 170px;
 }
 
-.row {
-    width: 160px;
+.table-row {
+    width: 155px;
     height: 35px;
     border: 1px solid #616161;
     border-bottom: 0px;
@@ -50,15 +46,24 @@ header {
     flex-direction: column;
     justify-content: space-between;
 }
-.row:last-child {
+.table-row:last-child {
     border-bottom: 1px solid #616161;
 }
 
-.column {
-    width: 170px;
+.column-header {
+    position: sticky;
+    top: 0px;
+    padding: 4px 2px;
+    border: 1px solid #616161;
+    width: 155px;
+    border-bottom: 0;
+    background-color: #151515;
+    color: white;
+    font-weight: 400;
+    font-size: 17.5px;
 }
 
-.top-info {
+.row-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,30 +72,26 @@ header {
     color: #616161;
 }
 
-.fix {
+.row-dayDate {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #616161;
     font-size: 10px;
-    color: white;
 }
 
-.comp {
+.row-day, .row-date {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.row-comp {
     font-size: 10px;
     
     font-weight: 300;
 }
 
-.day {
+.row-fixResult {
     font-size: 10px;
-    font-weight: 300;
-}
-
-.date {
-    font-size: 10px;
-    font-weight: 300;
-}
-
-.month-head {
     color: white;
-    font-weight: 400;
-    font-size: 17.5px;
-    margin-bottom: 10px;
 }
