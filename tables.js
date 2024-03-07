@@ -165,3 +165,33 @@ april.createMonth()
 const may = new Table('May', 30 , 0)
 may.createMonth()
 
+function openingMessage() {
+    
+    const messageBody = document.createElement('div')
+    messageBody.classList.add('message-body')
+    document.body.appendChild(messageBody)
+
+    const exitBtnWrapper = document.createElement('button')
+    exitBtnWrapper.classList.add('exit-btn-wrapper')
+    messageBody.appendChild(exitBtnWrapper)
+
+    const exitBtnImg = document.createElement('img')
+    exitBtnImg.classList.add('exit-btn-img')
+    exitBtnWrapper.appendChild(exitBtnImg)
+    exitBtnImg.src = 'cross.png'
+
+    const message = document.createElement('h3')
+    message.classList.add('message')
+    messageBody.appendChild(message)
+    message.innerText = "Welcome to my Arsenal FC Fixtures and Results Calendar. All data has been webscraped from 'https://theathletic.com/football/team/arsenal/schedule/'. This is a simple project to help me understand webscraping and fetching small amounts of data."
+
+    exitBtnWrapper.addEventListener('click', () => {
+        messageBody.remove()
+        document.body.style.overflow = 'scroll'
+    })
+
+}
+
+openingMessage()
+
+document.body.style.overflow = 'hidden'

@@ -31,8 +31,8 @@ header {
     padding: 25px 0;
 }
 
-.table-column {
-    width: 170px;
+.table-column.table-column:last-of-type {
+    margin-right: 25px;
 }
 
 .table-row {
@@ -94,4 +94,33 @@ header {
 .row-fixResult {
     font-size: 10px;
     color: white;
+}
+
+.message-body {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    padding: 35px;
+    background-color: #151515;
+    border: 1px solid #616161;
+    color: white;
+}
+
+.exit-btn-wrapper {
+    all: unset;
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.exit-btn-wrapper img {
+    width: 100%;
+}
+
+.message {
+    color: white;
+    font-weight: 400;
 }
